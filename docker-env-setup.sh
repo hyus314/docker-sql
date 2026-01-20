@@ -4,7 +4,11 @@ function postgres-docker-build-image() {
 
 function postgres-docker-run-container() {
     docker run                                                                 \
+<<<<<<< HEAD
         -it --name sql-practice-container                                      \
+=======
+        --name sql-practice-container                                          \
+>>>>>>> 774a1bd (Docker environment for sql:)
         -p 5432:5432                                                           \
         sql-practice
 }
