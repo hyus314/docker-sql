@@ -13,6 +13,6 @@ function postgres-docker-run-container() {
 
 echo "Docker environment for sql"
 echo "Build image: "
-echo "      postgres-docker-build-image"
+echo "      sqlite-docker-build-image"
 echo "Run container: "
-echo "      postgres-docker-run-container"
+echo "      sqlite-docker-run-container"

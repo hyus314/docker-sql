@@ -1,14 +1,10 @@
-# Use official PostgreSQL image
-FROM postgres:16
+FROM alpine:latest as sqlite-image
 
-# Set default environment variables
-ENV POSTGRES_USER=student
-ENV POSTGRES_PASSWORD=student
-ENV POSTGRES_DB=practice_db
+# Install sqlite
+RUN apk add --no-cache sqlite
 
-# Optional: copy initial SQL scripts
-# Any .sql file here will be executed on first container start
-# COPY init.sql /docker-entrypoint-initdb.d/
+# Working directory inside container
+WORKDIR /data
 
-# Expose PostgreSQL port
-EXPOSE 5432
+# Default database file
+CMD ["sqlite3", "practice.db"]
