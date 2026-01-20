@@ -1,10 +1,12 @@
+#!/bin/bash
+
 function postgres-docker-build-image() {
     docker build -t sql-practice .
 }
 
 function postgres-docker-run-container() {
     docker run                                                                 \
-        -it --name sql-practice-container                                      \
+        --name sql-practice-container                                          \
         -p 5432:5432                                                           \
         sql-practice
 }
