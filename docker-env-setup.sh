@@ -1,16 +1,14 @@
 #!/bin/bash
 
-function sqlite-docker-build-image() {
-    docker build -t sqlite-image .
+function postgres-docker-build-image() {
+    docker build -t sql-practice .
 }
 
-function sqlite-docker-run-container() {
-    docker run -d                                                              \
-        --name sqlite-practice-container                                       \
-        -v sqlite-data:/data                                                   \
-        sqlite-image                                                           \
-        tail -f /dev/null                                                   && \
-    docker exec -it sqlite-practice-container sqlite3 practice.db
+function postgres-docker-run-container() {
+    docker run                                                                 \
+        --name sql-practice-container                                          \
+        -p 5432:5432                                                           \
+        sql-practice
 }
 
 echo "Docker environment for sql"
