@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function postgres-docker-build-image() {
     docker build -t sql-practice .
 }
